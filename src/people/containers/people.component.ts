@@ -17,6 +17,7 @@ import { SyncService } from '../../services/sync.service';
 
 export class PeopleComponent implements OnInit {
     people: Array<String>;
+    newName: String;
 
     constructor( private peopleService: SyncService) { }
 
