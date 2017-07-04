@@ -7,7 +7,7 @@ import { SyncService } from '../../services/sync.service';
         <ul>
           <li *ngFor="let person of people">
               Name: {{ person }}
-              <button click="remove(peson)">Remove</button>
+              <button (click)="remove(person)">Remove</button>
           </li>
         </ul>
 
