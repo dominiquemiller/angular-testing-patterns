@@ -4,11 +4,16 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 
+import { AsyncService } from '../services/async.service';
+import { SyncService } from '../services/sync.service';
+
 import { AppComponent } from './app.component';
+import { PeopleComponent } from '../people/containers/people.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent, 
+    PeopleComponent
   ],
   imports: [
     BrowserModule,
