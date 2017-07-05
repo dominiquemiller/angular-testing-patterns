@@ -43,24 +43,25 @@ describe('AsyncService', () => {
   it('can instantiate service', () => expect(service instanceof AsyncService).toBe(true) );
 
   it('should get some stuff', () => {
+      // setup mock server response
       mockbackend.connections.subscribe( connection => {
         connection.mockRespond( new Response(new ResponseOptions( { status: 200, body: JSON.stringify(fakeData) } )));
       });
       service.getStuff().subscribe( data => expect(data).toEqual(fakeData) );
   });
 
-  it('should get a thing by id', () => {
+  it('should create a some stuff', () => {
       // setup mock server response
       mockbackend.connections.subscribe( connection => {
-        connection.mockRespond( new Response(new ResponseOptions( { status: 200, body: JSON.stringify(fakePerson) } )));
+        connection.mockRespond( new Response(new ResponseOptions( { status: 200, body: JSON.stringify({ id: 1 }) } )));
       });
 
-      service.postStuff(1).subscribe( data => expect(data.id).toEqual(fakePerson.id) );
+      service.postStuff(fakePerson).subscribe( data => expect(data.id).toEqual(fakePerson.id) );
   });
 
   it('should throw an error', () => {
+      // setup mock server error repsonse
       mockbackend.connections.subscribe( connection => {
-        // setup mock server error repsonse
         connection.mockError( new Response(new ResponseOptions( { status: 404 } )));
       });
 
