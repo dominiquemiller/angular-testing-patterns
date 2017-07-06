@@ -11,6 +11,7 @@ import { UserResolver } from '../services/user.resolver.service';
 import { AppComponent } from './app.component';
 import { PeopleComponent } from '../people/containers/people.component';
 import { UsersComponent } from '../users/containers/users.component';
+import { NewUserFormComponent } from '../users/components/new-user-form.component';
 
 const routes: Routes = [
   { path: 'users',
@@ -25,7 +26,8 @@ const routes: Routes = [
   declarations: [
     AppComponent,
     PeopleComponent,
-    UsersComponent
+    UsersComponent,
+    NewUserFormComponent
   ],
   imports: [
     BrowserModule,

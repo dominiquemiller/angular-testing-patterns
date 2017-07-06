@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
+
+import { AsyncService } from '../../services/async.service';
 
 import { Person } from '../../models/person.interface';
 
@@ -9,14 +11,22 @@ import { Person } from '../../models/person.interface';
 })
 
 export class UsersComponent implements OnInit {
-    users: Person[];
+    users;
 
     constructor( private route: ActivatedRoute,
-                 private router: Router) { }
+                 private asyncService: AsyncService) { }
 
     ngOnInit() {
         this.route.data.subscribe( data => {
-            this.users = data.users;
+            this.users = data;
         });
+     }
+
+     addUser(user: Person) {
+        this.asyncService.postStuff(user).subscribe( data => {
+            if (typeof(data) === 'number') {
+                this.users.push(user);
+            }
+        })
      }
 }
