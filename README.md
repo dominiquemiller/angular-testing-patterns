@@ -14,6 +14,7 @@ From your terminal type `ng test` to run unit / intergration tests or `ng e2e` r
 ### SPECS
 - Component with external template and router-outlet.
 - Component with inline template and service dependency
+- Component with external template, child-component, and route data resolver
 - Synchronous Service
 - Asynchronous Service
 
