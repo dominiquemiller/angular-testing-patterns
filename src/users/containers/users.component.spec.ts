@@ -16,9 +16,11 @@ import { fakeData } from '../../testing/fake-data-stub';
 // reolved data and child component
 
 class AsyncServiceStub {
-    get_stuff() {}
+    getStuff() {}
 
-    post_stuff(user: Person) {}
+    postStuff(user: Person) {
+      return Observable.of({ id: 2 });
+    }
 };
 
 describe('UsersComponent', () => {
@@ -39,7 +41,7 @@ describe('UsersComponent', () => {
       providers: [
           // Override with our stubs
           { provide: ActivatedRoute, useValue: userResolverStub },
-          { provide: AsyncService, useValue: AsyncServiceStub }
+          { provide: AsyncService, useClass: AsyncServiceStub }
       ],
       imports: []
     }).compileComponents();
@@ -57,8 +59,22 @@ describe('UsersComponent', () => {
   it('should have users via resolver', async(() => {
       fixture.detectChanges();
       fixture.whenStable().then(() => {
-          expect(component.users.length).toBe(3);
+        expect(component.users.length).toBe(3);
       });
+  }))
+
+  it('should create a new user', async(() => {
+    const person = { name: 'Sally', age: 33 };
+    // initial bindings and ngOnInit
+    fixture.detectChanges();
+
+    component.addUser(person);
+    // second change detection
+    fixture.detectChanges();
+    // wait for async activity
+    fixture.whenStable().then(() => {
+      expect(component.users.length).toBe(4);
+    });
   }));
 
 });

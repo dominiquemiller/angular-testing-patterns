@@ -24,7 +24,7 @@ export class UsersComponent implements OnInit {
 
      addUser(user: Person) {
         this.asyncService.postStuff(user).subscribe( data => {
-            if (typeof(data) === 'number') {
+            if (typeof(data.id) === 'number') {
                 this.users.push(user);
             }
         })

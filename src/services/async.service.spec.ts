@@ -14,7 +14,8 @@ const fakeData: Person[] = [
     { name: 'Earl', age: 41, id: 88 },
 ];
 
-const fakePerson: Person = { name: 'Ted', age: 22, id: 1 };
+const fakePerson: Person = { name: 'Ted', age: 22 };
+
 
 describe('AsyncService', () => {
 
@@ -56,7 +57,7 @@ describe('AsyncService', () => {
         connection.mockRespond( new Response(new ResponseOptions( { status: 200, body: JSON.stringify({ id: 1 }) } )));
       });
 
-      service.postStuff(fakePerson).subscribe( data => expect(data.id).toEqual(fakePerson.id) );
+      service.postStuff(fakePerson).subscribe( data => expect(data.id).toBeDefined() );
   });
 
   it('should throw an error', () => {
