@@ -5,6 +5,8 @@ import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/observable/throw';
 
+import { Person } from '../models/person.interface';
+
 @Injectable()
 export class AsyncService {
     API_URL: 'localhost:3000/';
@@ -18,9 +20,9 @@ export class AsyncService {
                     .catch( (error: any) => Observable.throw(error) );
     }
 
-    postStuff(id: number) {
+    postStuff(user: Person) {
         const url = `${this.API_URL}/another_endpoint`;
-        const body = { some_param: id };
+        const body = { some_param: user };
         return this.http
                    .post(url, body)
                    .map( (response: Response) => response.json() )
