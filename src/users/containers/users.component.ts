@@ -11,14 +11,14 @@ import { Person } from '../../models/person.interface';
 })
 
 export class UsersComponent implements OnInit {
-    users;
+    users: Person[];
 
     constructor( private route: ActivatedRoute,
                  private asyncService: AsyncService) { }
 
     ngOnInit() {
-        this.route.data.subscribe( data => {
-            this.users = data;
+        this.route.data.subscribe( (data: { list: Person[] }) => {
+            this.users = data.list;
         });
      }
 

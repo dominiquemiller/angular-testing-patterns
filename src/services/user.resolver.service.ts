@@ -7,10 +7,10 @@ import { AsyncService } from './async.service';
 import { Person } from '../models/person.interface';
 
 @Injectable()
-export class UserResolver implements Resolve<Person[]> {
+export class UserResolver implements Resolve<any> {
     constructor(private asyncService: AsyncService , private router: Router) {}
 
-    resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<Person[]> {
+    resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<any> {
       return this.asyncService.getStuff();
     }
 }

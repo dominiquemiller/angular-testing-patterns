@@ -11,7 +11,7 @@ export class NewUserFormComponent implements OnInit {
 
     constructor() { }
 
-    ngOninit() {}
+    ngOnInit() {}
 
     login(value) {
         this.submitUser.emit(value);
