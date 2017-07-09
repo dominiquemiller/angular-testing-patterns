@@ -25,7 +25,7 @@ class AsyncServiceStub {
 
 describe('UsersComponent', () => {
   let userResolverStub = {
-    data: Observable.of(fakeData)
+    data: Observable.of({ list: fakeData })
   };
   let fixture: ComponentFixture<UsersComponent>;
   let component: UsersComponent;
