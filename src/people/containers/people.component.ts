@@ -5,13 +5,14 @@ import { SyncService } from '../../services/sync.service';
     selector: 'app-people',
     template: `
         <ul>
-          <li *ngFor="let person of people">
+          <li *ngFor="let person of people" fancyBox>
               Name: {{ person }}
               <button (click)="remove(person)">Remove</button>
           </li>
         </ul>
 
-        <input name="name" type="text" ngModel="newName"> <button click="add(newName)">Add</button>
+        <input name="newName" type="text" [(ngModel)]="newName" placeholder="new name">
+        <button (click)="add(newName)">Add</button>
     `
 })
 
@@ -30,6 +31,7 @@ export class PeopleComponent implements OnInit {
     }
 
     add(person) {
+        console.log(person);
         this.people = this.peopleService.addItem(person);
     }
 }

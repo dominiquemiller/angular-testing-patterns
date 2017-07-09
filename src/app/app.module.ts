@@ -12,14 +12,16 @@ import { AppComponent } from './app.component';
 import { PeopleComponent } from '../people/containers/people.component';
 import { UsersComponent } from '../users/containers/users.component';
 import { NewUserFormComponent } from '../users/components/new-user-form.component';
+import { FancyBoxDirectiveDirective } from '../directives/fancy-box.directive';
 
 const routes: Routes = [
   { path: 'users',
-      component: UsersComponent,
-      resolve: {
-          list: UserResolver
-      }
-  }
+    component: UsersComponent,
+    resolve: {
+      list: UserResolver
+    }
+  },
+  { path: 'people', component: PeopleComponent }
 ];
 
 @NgModule({
@@ -27,7 +29,8 @@ const routes: Routes = [
     AppComponent,
     PeopleComponent,
     UsersComponent,
-    NewUserFormComponent
+    NewUserFormComponent,
+    FancyBoxDirectiveDirective
   ],
   imports: [
     BrowserModule,
