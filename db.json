@@ -1,0 +1,7 @@
+{ "some_endpoint": [
+     { "name": "Ted", "age": 22, "id": 1 },
+     { "name": "Sally", "age": 32, "id": 34 },
+     { "name": "Earl", "age": 41, "id": 88 }
+  ],
+  "another_endpoint": []
+}
