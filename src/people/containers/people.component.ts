@@ -31,7 +31,6 @@ export class PeopleComponent implements OnInit {
     }
 
     add(person) {
-        console.log(person);
         this.people = this.peopleService.addItem(person);
     }
 }
