@@ -12,7 +12,7 @@ import { AppComponent } from './app.component';
 import { PeopleComponent } from '../people/containers/people.component';
 import { UsersComponent } from '../users/containers/users.component';
 import { NewUserFormComponent } from '../users/components/new-user-form.component';
-import { FancyBoxDirectiveDirective } from '../directives/fancy-box.directive';
+import { FancyBoxDirective } from '../directives/fancy-box.directive';
 
 const routes: Routes = [
   { path: 'users',
@@ -30,7 +30,7 @@ const routes: Routes = [
     PeopleComponent,
     UsersComponent,
     NewUserFormComponent,
-    FancyBoxDirectiveDirective
+    FancyBoxDirective
   ],
   imports: [
     BrowserModule,

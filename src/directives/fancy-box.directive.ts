@@ -3,7 +3,7 @@ import { Directive, HostBinding, HostListener } from '@angular/core';
 @Directive({
   selector: '[fancyBox]'
 })
-export class FancyBoxDirectiveDirective {
+export class FancyBoxDirective {
   @HostBinding('class.box-outline')
   hoverOver: boolean;
 
