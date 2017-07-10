@@ -15,11 +15,11 @@ From your terminal type `ng serve` to run development server on localhost:4200. 
 db.json` to use local DB json server on localhost:3000. 
 
 ### SPECS
-- Component with external template and router-outlet.
-- Component with inline template and service dependency
-- Component with external template, child-component, and route data resolver
-- Synchronous Service
-- Asynchronous Service
-- Attribute directive with mouse over / out events
+- [Component with external template and router-outlet](./src/app/app.component.spec.ts)
+- [Component with inline template and service dependency](./src/people/containers/people.component.spec.ts)
+- [Component with external template, child-component, and route data resolver](./src/users/containers/users.component.spec.ts)
+- [Synchronous Service](./src/services/sync.service.spec.ts)
+- [Asynchronous Service](./src/services/async.service.spec.ts)
+- [Attribute directive with mouse over / out events](./src/directives/fancy-box.directive.spec.ts)
 
 
