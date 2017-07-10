@@ -20,5 +20,6 @@ db.json` to use local DB json server on localhost:3000.
 - Component with external template, child-component, and route data resolver
 - Synchronous Service
 - Asynchronous Service
+- Attribute directive with mouse over / out events
 
 
