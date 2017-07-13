@@ -20,6 +20,7 @@ db.json` to use local DB json server on localhost:3000.
 - [Component with external template, child-component, and route data resolver](./src/users/containers/users.component.spec.ts)
 - [Synchronous Service](./src/services/sync.service.spec.ts)
 - [Asynchronous Service](./src/services/async.service.spec.ts)
+- [Service that uses the localStorage API](./src/services/gamer-tag.service.spec.ts)
 - [Attribute directive with mouse over / out events](./src/directives/fancy-box.directive.spec.ts)
 
 
