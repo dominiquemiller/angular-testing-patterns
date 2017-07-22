@@ -22,5 +22,7 @@ db.json` to use local DB json server on localhost:3000.
 - [Asynchronous Service](./src/services/async.service.spec.ts)
 - [Service that uses the localStorage API](./src/services/gamer-tag.service.spec.ts)
 - [Attribute directive with mouse over / out events](./src/directives/fancy-box.directive.spec.ts)
+- [Component with routing and router outlet](./src/comp-with-routing/comp-with-routing.component.ts)
+
 
 
